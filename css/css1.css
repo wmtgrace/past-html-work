@@ -1,0 +1,36 @@
+body{
+    background-color: lightcyan;
+    color:royalblue;
+    font-family: sans-serif;
+	background-image:url("background2.jpg");
+	background-size:cover;
+}
+h1, h2, h3, h4, h5, h6, header{
+    color:darkblue;
+}
+a{
+    color:royalblue;
+}
+.box{
+	margin: 5%;
+}
+table.product tr td{
+	vertical-align: center;
+	text-align: center;
+	font-size: larger;
+	font-weight: medium;
+	border: 0px solid;
+}
+table tr
+		{border: 0px;}
+header
+	{font-size: xx-large;
+	 font-weight: bolder;}
+article
+	{font-size: larger;
+	font-weight: medium;
+	text-align: justify;
+	text-align-last: left;
+	-moz-text-align-last: left;
+	-ms-text-align-last: left; 
+}

@@ -1,0 +1,111 @@
+<html lang="en-US" style="background: rgb(246, 246, 246);">
+<head>
+<title>SmartMenu</title>
+<script type="text/javascript" src="memory_game/js/jquery-2.1.3.min.js"></script>
+<!-- Clock JS Below-->
+<script language = "JavaScript">
+function startTime(){
+	var today=new Date()	
+	var month = new Array();
+	month[0] = "January";
+	month[1] = "February";
+	month[2] = "March";
+	month[3] = "April";
+	month[4] = "May";
+	month[5] = "June";
+	month[6] = "July";
+	month[7] = "August";
+	month[8] = "September";
+	month[9] = "October";
+	month[10] = "November";
+	month[11] = "December";
+	var english_month = month[today.getMonth()];
+	var d = today.getDate();	
+	var h=today.getHours()
+	var m=today.getMinutes()
+	var s=today.getSeconds()
+	var colon=""
+	if(s%2==0)
+		colon=":"
+	else
+		colon="<span style=\"color:LightBlue\">:</span>"
+	m=checkTime(m)
+	s=checkTime(s)
+	//ms=checkTime2(ms)
+	document.getElementById('txt').innerHTML=d+" "+english_month+"\n"+h+colon+m+colon+s
+	t=setTimeout("startTime()",500)
+}	
+function checkTime(i){
+	if (i<10)
+	{i="0"+i}
+	return i
+}
+function checkTime2(i){
+	if (i<100)
+	{i="0"+i}
+	return i
+}
+</script>
+<link href="css/SmartMenu/sm-core-css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	div{
+		color: black;
+		padding: 20px;
+		background-position: center;
+		font-size: x-large;
+		font-weight: bold;
+	}
+	#AboutUs { background: url('images/aboutus.jpg'); }
+	#Product {
+		background: url('images/product.jpg');
+		padding-left: 2px;
+		padding-right: 0px;
+	}
+	.Product1 {
+		background: url('images/product.jpg');
+		padding-left: 35px;
+		padding-right: 0px;
+	}
+	#Food:hover { background: url('images/babyfood.jpg'); }
+	#Care:hover { background: url('images/babylaugh.jpg'); }
+	#Toys:hover { background: url('images/babytoys.jpg'); }
+	#ContactUs { background-image: url("images/contactus.jpg"); }
+	#Games { background-image: url("images/game.jpg"); }
+	audio { width: 240px; display:block }
+	#txt {
+		font-size: 20pt;
+		width:100%;
+		padding-left: 0px;
+		padding-right: 0px;
+		text-align:center;
+		background-color:LightBlue;
+		color: SteelBlue;
+		font-family:sans-serif;
+		cursor:default;
+	}
+	ul li > ul { display: hidden; }
+	ul li:hover > ul { display:block; }
+</style>
+</head>
+<link href="css/SmartMenu/sm-simple.css" rel="stylesheet" type="text/css">
+<body onload="startTime()">
+	<ul id="main-menu" class="sm sm-vertical sm-simple sm-simple-vertical" style="width: 12em;">
+		<li><a href="content_pages/about_us.html" target="Central"><div id="AboutUs">About Us</div></a></li>
+		<li><a href="#"><div id="Product">+Product</div></a>
+			<ul>
+				<li><a href="content_pages/product.html" target="Central"><div class="Product1" id="Food">Baby Food</div></a></li>
+				<li><a href="content_pages/babycare.html" target="Central"><div class="Product1" id="Care">Baby Care</div></a></li>
+				<li><a href="content_pages/babytoys.html" target="Central"><div class="Product1" id="Toys">Baby Toys</div></a></li>
+			</ul>
+		</li>
+		<li><a href="memory_game/memory_game.html" target="Central"><div id="Games">Games</div></a></li>
+		<li><a href="content_pages/contact_us.html" target="Central"><div id="ContactUs">Contact Us</div></a></li>
+	</ul>
+	<ul id="main-menu" class="sm sm-vertical sm-simple sm-simple-vertical" style="width: 12em; float: bottom; position: relative;">
+	<li><div id="txt"></div>
+		<audio controls autoplay src="mozart_kv545.ogg" style="width: 100%; bottom:0;"></audio>
+	</li>
+	</ul>
+</body>
+
+</html>

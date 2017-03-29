@@ -1,0 +1,111 @@
+<html>
+<head>
+	<title>Contact Us | Franco's Baby Limited</title>
+	<style>
+		#rightBox{
+			margin-right: 5%;
+			float:right; 
+			width:44%;
+		}
+		#leftBox{
+			margin-left: 5%;
+			margin-right: 0.5%;
+			float:left; 
+			width:44%;
+		}
+		header
+			{font-size: xx-large;
+			 font-weight: bolder;}
+		article
+			{font-size: larger;
+			 font-weight: medium;
+			 text-align: justify;
+			 text-align-last: left;
+			 -moz-text-align-last: left;
+			 -ms-text-align-last: left; }
+		form
+			{font-size: larger;
+			 font-weight: medium;
+			 text-align: left; }
+		table.info tr td
+			{vertical-align: top;
+			 font-size: larger;
+			 font-weight: medium;}
+		body
+			{background-image:url("background2.jpg");
+			background-size:cover;}
+		</style>
+	<link rel=stylesheet type="text/css" href="../css/css1.css">
+	<script>
+		document.writeln("");
+		document.write("<div id='rightBox' style=''>");
+		document.write("<header><br><br></header><br>");
+		document.write("<table class='info'>");
+		document.write("<tr>");
+			document.write("<td>Opening hour: </td>");
+			document.write("<td width='5%'>&nbsp;</td>");
+			document.write("<td style='vertical-align:middle'>9:00 - 20:00</td>");
+		document.write("</tr>");
+		document.write("<tr>");
+			document.write("<td>E-mail: </td>");
+			document.write("<td width='5'>&nbsp;</td>");
+			document.write("<td>customerservice@franco.hk</td>");
+		document.write("</tr>");
+		document.write("<tr>");
+			document.write("<td>Phone: </td>");
+			document.write("<td width='5%'>&nbsp;</td>");
+			document.write("<td>(+852) 2345 4556 </td>");
+		document.write("</tr>");
+		document.write("<tr>");
+			document.write("<td>Address: </td>");
+			document.write("<td width='5%'>&nbsp;</td>");
+			document.write("<td width='75%'>Unit 1502, 15/F, <br>Causeway Bay Plaza 1, <br>489 Hennessy Road, <br>Causeway Bay, Hong Kong</td>");
+		document.write("</tr>")
+<!--	document.write("<tr>"); -->
+<!--		document.write("<td colspan='3'><iframe src='https://mapsengine.google.com/map/u/0/embed?mid=zBranEm8V2XI.kc3WhYavfD3c' width='480' height='360'></iframe></td>"); -->
+<!--	document.write("</tr>"); -->
+		document.write("</table>");
+		document.write("</div>");
+		
+		function validateForm() {
+			var x = document.forms["FORM"]["cusname"].value;
+			var y = document.forms["FORM"]["cusemail"].value;
+			var z = document.forms["FORM"]["cussub"].value;
+			if (x == null || x == " ") {
+				alert("Please fill in your name");
+				return false;
+			}else if (y == null || y == " ") {
+				alert("Please fill in your email");
+				return false;
+			}else if (z == null || z == " ") {
+				alert("Please fill in the subject");
+				return false;
+			}
+			else{
+				window.open("thank_you.html");
+				return true;
+			}
+}
+	</script>
+</head>
+<body>
+	<div id="leftBox">
+	<header><br>Contact Us</header><br>
+	<article>We are happy to answer any of your questions. Drop us an email at any time.
+	<FORM NAME="FORM" METHOD ="POST" onsubmit="return validateForm()">
+		<br>Your name (required)
+		<br><INPUT NAME = "cusname" TYPE = "text" MIN="1" SIZE = "40/">
+		<br>Your e-mail (required):
+		<br><INPUT NAME = "cusemail" TYPE = "email" MIN="1" SIZE = "40/">
+		<br>Your phone number (optional):
+		<br><INPUT NAME = "cusphone" TYPE = "number" MIN="8" SIZE = "15/">
+		<br>Subject (required)
+		<br><INPUT NAME = "cussub" TYPE = "text" MIN="1" SIZE = "40/">
+		<br>Your message
+		<br><TEXTAREA NAME = "cusmes" ROWS="4" COLS="40"></TEXTAREA>
+		<br><INPUT TYPE ="submit" VALUE= "Send Us An Email">
+		<INPUT TYPE ="reset" VALUE= "Clear Your Entries">
+	</FORM>
+	</div>
+</body>
+</html>
